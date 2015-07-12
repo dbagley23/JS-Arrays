@@ -265,7 +265,38 @@ checkLength(arr1,arr2);
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
 */
 
-  //Code Here
+var num1 = Math.floor(Math.random() * (30 - 0) + 0);
+var num2 = Math.floor(Math.random() * (30 - 0) + 0);
+var arr1 = [];
+var arr2 = [];
+for(var i = 0; i < num1; i++){
+    arr1.push(i);
+}
+for(var i = 0; i < num2; i++){
+    arr2.push(i);
+}
+function both(array1, array2){
+    var newArray = [];
+    if(array1.length < array2.length){
+        for(var i = 0;i<array1.length;i++){
+            for(var j=0; j<array2.length; j++){
+                if(array1[i]===array2[j]){
+                    newArray.push(array1[i])
+                }
+            }
+        }
+    } else {
+        for(var i = 0;i<array2.length;i++){
+            for(var j=0; j<array1.length; j++){
+                if(array2[i]===array1[j]){
+                    newArray.push(array2[i])
+                }
+            }
+        }
+    }
+    return newArray;
+}
+both(arr1,arr2);
   
   
   
@@ -305,14 +336,48 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+var devMountainEmployees = [];
+var tyler = {
+    name: 'Tyler',
+    position: 'Lead Instructor/Engineer',
+    spiritAnimal: 'Honey Badger'
+};
+var cahlan = {
+    name: 'Cahlan',
+    position: 'CEO',
+    spiritAnimal: 'butterfly'
+};
+var ryan = {
+    name: 'Ryan',
+    position: 'Marketing',
+    spiritAnimal: 'fox'
+};
+var colt = {
+    name: 'Colt',
+    position: 'Everything really',
+    spiritAnimal: 'Young Male Horse'
+}
+function addEmployees(person){
+    devMountainEmployees.push(person);
+}
+addEmployees(tyler);
+addEmployees(cahlan);
+addEmployees(ryan);
+addEmployees(colt);''
+devMountainEmployees
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
-
-
+function deleteCahlan(name){
+    for(var i = 0; i< devMountainEmployees.length;i++){
+        if(devMountainEmployees[i].name === name){
+            devMountainEmployees.splice(i,1)
+        }
+    }
+}
+deleteCahlan('Cahlan')
+devMountainEmployees
 
 
 //NEXT PROBLEM
@@ -352,20 +417,38 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
 //include this as one of the objects in your array.
+var users = [];
 var user1 = {
     name: 'Tyler McGinnis',
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
 }
-
-//Your Code Here
+var user2 = {
+    name: 'Dale Bagley',
+    email: 'dale@reparteegallery.com',
+    password: 'thisstinks',
+    username: 'HowdyDoody'
+}
+var user3 = {
+    name: 'Steevun Lemon',
+    email: 'lemon@reparteegallery.com.com',
+    password: 'mrstraithair',
+    username: 'TallGuy'
+}
+function addUsers(usr){
+    users.push(usr);
+}
+addUsers(user1);
+addUsers(user2);
+addUsers(user3);
+users
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -375,7 +458,16 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular indice he's located in, delete him from the array.*/
 
-  //Code Here
+ function deleteTyler(email){
+  for(var i = 0; i<users.length;i++){
+      if(users[i].email === email) {
+          users.splice(i, 1)
+      }
+  }
+ }
+deleteTyler('tylermcginnis33@gmail.com')
+users
+
 
 //The activity we just did is very much how data works in 'the real world'.
 
