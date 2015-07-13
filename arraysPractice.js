@@ -212,11 +212,11 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-var numbers = [5, 9, 16, 19, 25, 34, 48];
+var numbers = [5, '9', 16, 19, '25', '34', 48];
 function addTen(numbers){
     var newNumbers = [];
     for(var i = 0;i<numbers.length; i++){
-        newNumbers.push(numbers[i] + 10)
+        newNumbers.push(Number(numbers[i]) + 10)
     }
     return newNumbers;
 }
